@@ -30,7 +30,8 @@ Configure the security group:
         - SSH (Port 22) – Source: Your IP (for secure access).
         - HTTP (Port 80) – Source: 0.0.0.0/0 (for public web traffic).
         - HTTPS (Port 443) – Source: 0.0.0.0/0 (for secure web traffic).
-    
+    ![Screenshot 2024-12-20 044604](https://github.com/user-attachments/assets/77b71f9e-ef62-48f1-9021-541ab2093ab4)
+
 Launch the Instance:
         - Download the key pair (.pem file) if this is your first time creating an instance.
         - Save the key pair securely as it is needed to connect to the instance.
@@ -89,6 +90,7 @@ html
 - Verify HTTPS:
     Visit https://web.francis.mooo.com in your browser.
 - Ensure a padlock icon is visible, confirming the connection is secure.
+![Screenshot 2024-12-22 011841](https://github.com/user-attachments/assets/73d7f020-c199-4ac2-b3a8-01959abacaaa)
 
 
 ### Step 5: Secure the Server
@@ -104,9 +106,7 @@ html
 Key Information
 Public IP Address:     https://13.52.221.0.
 Domain Name:           ttps://web.francis.mooo.com.
-
-Screenshots
-Include the following:
+![image](https://github.com/user-attachments/assets/5600a810-d973-48ff-893c-e930dba275a0)
 
 
 
@@ -114,6 +114,9 @@ Include the following:
 ## Expected Results
 HTTP: Redirects automatically to HTTPS.
 HTTPS: Securely serves your custom landing page with a padlock icon.
+![image](https://github.com/user-attachments/assets/b8280eb7-e3b8-4d49-9942-84612d502ecf)
+
+
 
 ## Notes and Troubleshooting
 Ensure DNS records are updated to point to your public IP.
