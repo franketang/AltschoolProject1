@@ -72,89 +72,55 @@ html
         </body>
         </html>
 - Save the file (CTRL+O, then Enter) and exit (CTRL+X).
-- Test Your Custom Page:
+- Test Custom Page:
         Visit http://13.52.221.0 in your browser to view your custom HTML content.
 
 
-### Step 4: Configure HTTPS with Let's Encrypt
-Install Certbot: Certbot is a tool that automates the process of obtaining and renewing SSL certificates. Install it with:
+
+### Step 4: Configure HTTPS:
+- Install Certbot: Certbot is a tool that automates the process of obtaining and renewing SSL certificates. Install it with:
+        sudo apt install certbot python3-certbot-apache -y
+- Run Certbot to Obtain an SSL Certificate: Use Certbot to automatically configure SSL for your domain:
+        sudo certbot --apache
+- Enter your domain name(s) when prompted (e.g., web.francis.mooo.com )
+        Certbot validates domain, install the SSL certificate, and configure Apache for HTTPS.
+- Redirect HTTP to HTTPS: Certbot will ask if you want to redirect all HTTP traffic to HTTPS. Select Yes.
+
+- Verify HTTPS:
+    Visit https://web.francis.mooo.com in your browser.
+- Ensure a padlock icon is visible, confirming the connection is secure.
 
 
-sudo apt install certbot python3-certbot-apache -y
-Run Certbot to Obtain an SSL Certificate: Use Certbot to automatically configure SSL for your domain:
-
-sudo certbot --apache
-Enter your domain name(s) when prompted (e.g., francisetang.mooo.com and www.francisetang.mooo.com).
-Certbot will validate your domain, install the SSL certificate, and configure Apache for HTTPS.
-Redirect HTTP to HTTPS: Certbot will ask if you want to redirect all HTTP traffic to HTTPS. Select Yes.
-
-Verify HTTPS:
-
-Visit https://francisetang.mooo.com in your browser.
-Ensure a padlock icon is visible, confirming the connection is secure.
-Step 5: Secure the Server
-Enable UFW Firewall: Use UFW to allow only necessary traffic:
+### Step 5: Secure the Server
+- Enable UFW Firewall: Use UFW to allow only necessary traffic:
+      sudo ufw allow 'Apache Full'
+      sudo ufw enable
+- Check AWS Security Group Rules:
+      Verify that the Security Group allows traffic on ports 22 (SSH), 80 (HTTP), and 443 (HTTPS).
 
 
 
-sudo ufw allow 'Apache Full'
-sudo ufw enable
-Check AWS Security Group Rules:
-
-Verify that the Security Group allows traffic on ports 22 (SSH), 80 (HTTP), and 443 (HTTPS).
-Project Deliverables
+## Project Deliverables
 Key Information
-Public IP Address:
+Public IP Address:     https://13.52.221.0.
+Domain Name:           ttps://web.francis.mooo.com.
 
-Example: http://13.52.221.0.
-Domain Name:
-
-Example: https://francisetang.mooo.com.
 Screenshots
 Include the following:
 
 
-Screenshot of the website on http://13.52.221.0.
-
-Screenshot of the website on https://francisetang.mooo.com.
-Scripts and Commands Used
-Here is a summary of all the commands used in the project:
-
-System Updates
 
 
-sudo apt update && sudo apt upgrade -y
-Install Apache
-
-
-sudo apt install apache2 -y
-sudo systemctl start apache2
-sudo systemctl enable apache2
-Deploy HTML Page
-
-
-cd /var/www/html
-sudo rm index.html
-sudo nano index.html
-Configure HTTPS
-
-
-sudo apt install certbot python3-certbot-apache -y
-sudo certbot --apache
-Enable Firewall
-
-
-sudo ufw allow 'Apache Full'
-sudo ufw enable
-
-# Expected Results
+## Expected Results
 HTTP: Redirects automatically to HTTPS.
 HTTPS: Securely serves your custom landing page with a padlock icon.
 
-# Notes and Troubleshooting
+## Notes and Troubleshooting
 Ensure DNS records are updated to point to your public IP.
 If HTTPS doesn't work, check the Apache configuration and Certbot logs.
 Use tools like SSL Checker to verify your SSL setup.
 
+## Conclusion
+In this project, you will successfully learn how to set up and configure a basic web server using AWS EC2, Apache, and Let's Encrypt. By following these steps, you’ve provisioned a Linux-based instance, deployed a custom HTML landing page, linked it to a domain name, and secured it with HTTPS. This setup ensures your web server is both functional and secure, with traffic encrypted for privacy and safety. These skills are fundamental for hosting modern websites and applications, and they serve as a foundation for building more advanced cloud-based solutions. Whether you're a beginner or an aspiring cloud engineer, this project demonstrates how simple yet powerful tools can help you create secure and accessible web services. Happy hosting!
 
 
