@@ -2,19 +2,19 @@
 Simple Web Server with HTTPS Configuration
 This project demonstrates how to set up a basic web server on an AWS EC2 instance, deploy a simple HTML landing page, and secure the website using HTTPS with a free SSL certificate from Let's Encrypt. The goal is to make the web server accessible publicly via a domain name and ensure secure communication using SSL/TLS.
 
-Project Overview
+# Project Overview
 The project includes the following tasks:
 
-Provisioning a Linux-based virtual server (EC2 instance) on AWS.
-Installing and configuring the Apache web server to serve web content.
-Deploying a custom HTML landing page to showcase the server's functionality.
-Configuring DNS to link a domain name to the server’s public IP address.
-Setting up HTTPS by installing a free SSL certificate from Let's Encrypt using Certbot.
-Securing the server by enabling a firewall and ensuring only necessary traffic is allowed.
-Verifying that both the HTTP and HTTPS versions of the site are functional and accessible.
-This README provides detailed steps and commands, making it easy for anyone—even beginners—to replicate the process.
+1. Provisioning a Linux-based virtual server (EC2 instance) on AWS.
+2. Installing and configuring the Apache web server to serve web content.
+3. Deploying a custom HTML landing page to showcase the server's functionality.
+4. Configuring DNS to link a domain name to the server’s public IP address.
+5. Setting up HTTPS by installing a free SSL certificate from Let's Encrypt using Certbot.
+6. Securing the server by enabling a firewall and ensuring only necessary traffic is allowed.
+7. Verifying that both the HTTP and HTTPS versions of the site are functional and accessible.
+8. This README provides detailed steps and commands, making it easy for anyone—even beginners—to replicate the process.
 
-Steps to Complete the Project
+# Steps to Complete the Project
 Step 1: Provisioning the EC2 Instance
 Log in to the AWS Management Console:
 
