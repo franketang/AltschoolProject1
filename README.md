@@ -43,7 +43,7 @@ Update the System: Run the following command to update and upgrade the instance:
 
 
 
-sudo apt update && sudo apt upgrade -y
+**sudo apt update && sudo apt upgrade -y
 Install Apache: Apache is a widely used open-source web server. Install it by running:
 
 
