@@ -161,10 +161,12 @@ Enable Firewall
 
 sudo ufw allow 'Apache Full'
 sudo ufw enable
-Expected Results
+
+# Expected Results
 HTTP: Redirects automatically to HTTPS.
 HTTPS: Securely serves your custom landing page with a padlock icon.
-Notes and Troubleshooting
+
+# Notes and Troubleshooting
 Ensure DNS records are updated to point to your public IP.
 If HTTPS doesn't work, check the Apache configuration and Certbot logs.
 Use tools like SSL Checker to verify your SSL setup.
