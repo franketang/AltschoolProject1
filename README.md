@@ -15,8 +15,9 @@ The project includes the following tasks:
 8. This README provides detailed steps and commands, making it easy for anyone—even beginners—to replicate the process.
 
 ## Steps to Complete the Project
+
 ### Step 1: Provisioning the EC2 Instance
-    Log in to the AWS Management Console:
+Log in to the AWS Management Console:
     Navigate to the EC2 Dashboard.
     Launch a New EC2 Instance:
         - Select Ubuntu Server 20.04 LTS as the Amazon Machine Image (AMI).
@@ -24,73 +25,58 @@ The project includes the following tasks:
         - Configure instance details (leave default settings).
         - Add storage (default 8 GiB is sufficient).
     
-    Configure the security group:
+Configure the security group:
         - Add the following rules:
         - SSH (Port 22) – Source: Your IP (for secure access).
         - HTTP (Port 80) – Source: 0.0.0.0/0 (for public web traffic).
         - HTTPS (Port 443) – Source: 0.0.0.0/0 (for secure web traffic).
     
-    Launch the Instance:
+Launch the Instance:
         - Download the key pair (.pem file) if this is your first time creating an instance.
         - Save the key pair securely as it is needed to connect to the instance.
 
-    Connect to the Instance:
-Use an SSH client like PuTTY (on Windows) or the terminal (on Linux/macOS).
-For PuTTY, convert the .pem key file to .ppk using PuTTYgen.
-Step 2: Install and Configure Apache
-Update the System: Run the following command to update and upgrade the instance:
+Connect to the Instance:
+        - Use an SSH client like PuTTY (on Windows) or the terminal (on Linux/macOS).
+        - For PuTTY, convert the .pem key file to .ppk using PuTTYgen.
 
+###Step 2: Install and Configure Apache
+        - Update the System: Run the following command to update and upgrade the instance:
+                sudo apt update && sudo apt upgrade -y
+        - Install Apache: Apache is a widely used open-source web server. Install it by running:
+                sudo apt install apache2 -y
+        - Start and Enable Apache: Ensure the Apache web server is running and set to start on boot:
+                sudo systemctl start apache2
+                sudo systemctl enable apache2
+        - Verify Apache Installation:
+                Open a browser and navigate to http://13.52.221.0
+                You should see the Apache default page indicating the server is running.
 
-
-**sudo apt update && sudo apt upgrade -y
-Install Apache: Apache is a widely used open-source web server. Install it by running:
-
-
-
-sudo apt install apache2 -y
-Start and Enable Apache: Ensure the Apache web server is running and set to start on boot:
-
-
-
-sudo systemctl start apache2
-sudo systemctl enable apache2
-Verify Apache Installation:
-
-Open a browser and navigate to http://13.52.221.0 (replace 13.52.221.0 with your instance's public IP address).
-You should see the Apache default page indicating the server is running.
-Step 3: Deploy the HTML Landing Page
-Navigate to the Web Directory: The default location for web files in Apache is /var/www/html. Change to this directory:
-
-
-
-cd /var/www/html
-Remove the Default Page: Delete the default index.html file:
-
-
-
-sudo rm index.html
-Create Your Custom HTML Page: Use a text editor like Nano to create a new index.html file:
-
-
-sudo nano index.html
-Add the following content (replace with your details):
+### Step 3: Deploy the HTML Landing Page
+- Navigate to the Web Directory: The default location for web files in Apache is /var/www/html. Change to this directory:
+            cd /var/www/html
+- Remove the Default Page: Delete the default index.html file:
+            sudo rm index.html
+- Create Your Custom HTML Page: Use a text editor like Nano to create a new index.html file:
+            sudo nano index.html
+- Add the following content to the html file:
 html
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Welcome to My Project</title>
-</head>
-<body>
-    <h1>Welcome to Francis Etang's Landing Page</h1>
-    <p>This is a simple web server deployed on AWS.</p>
-</body>
-</html>
-Save the file (CTRL+O, then Enter) and exit (CTRL+X).
-Test Your Custom Page:
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>Welcome to My Project</title>
+        </head>
+        <body>
+            <h1>Welcome to Francis Etang's Landing Page</h1>
+            <p>This is a simple web server deployed on AWS.</p>
+        </body>
+        </html>
+- Save the file (CTRL+O, then Enter) and exit (CTRL+X).
+- Test Your Custom Page:
+        Visit http://13.52.221.0 in your browser to view your custom HTML content.
 
-Visit http://13.52.221.0 in your browser to view your custom HTML content.
-Step 4: Configure HTTPS with Let's Encrypt
+
+### Step 4: Configure HTTPS with Let's Encrypt
 Install Certbot: Certbot is a tool that automates the process of obtaining and renewing SSL certificates. Install it with:
 
 
