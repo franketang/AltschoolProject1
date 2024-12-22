@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome to [Your Name] Landing Page</title>
+    <style>
+        body {
+            background-color: #f5fffa; /* Very light mint green */
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            text-align: center;
+            font-size: 36px;
+            font-weight: bold;
+            color: black;
+        }
+        h2 {
+            font-size: 16px;
+            font-weight: bold;
+            color: black;
+            text-align: center;
+        }
+        h3 {
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+            color: black;
+        }
+        .button-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .button-container button {
+            margin: 0 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .content {
+            display: none;
+            text-align: left;
+            margin: 20px;
+        }
+        marquee {
+            font-style: italic;
+            color: green;
+        }
+    </style>
+    <script>
+        function showContent(id) {
+            var contents = document.getElementsByClassName('content');
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].style.display = 'none';
+            }
+            document.getElementById(id).style.display = 'block';
+        }
+    </script>
+</head>
+<body>
+    <h1>WELCOME TO FRANCIS ETANG'S ALTSCHOOL PROJECT LANDING PAGE</h1>
+    <h2>Click Any Button Below To Proceed</h2>
+    <div class="button-container">
+        <button onclick="showContent('introduction')">Brief Introduction</button>
+        <button onclick="showContent('technologies')">Technologies Used</button>
+        <button onclick="showContent('steps')">Steps Taken</button>
+        <button onclick="showContent('applications')">Applications</button>
+        <button onclick="showContent('references')">References</button>
+    </div>
+    <div id="introduction" class="content">
+        <h3>Brief Introduction</h3>
+        <p>This project involves setting up a web server on a cloud platform (AWS) and deploying a simple HTML page. The goal is to demonstrate the basic steps of provisioning a server, installing necess>
+        <p>Version control is an essential aspect of software development, and Git is a popular tool for this purpose. It allows developers to track changes, collaborate with others, and manage different>
+        <p>HTML (HyperText Markup Language) is the standard language for creating web pages. It allows us to structure content and add elements like text, images, and buttons. Combining these technologie>
+    </div>
+    <div id="technologies" class="content">
+        <h3>Technologies Used</h3>
+        <ul>
+            <li>Amazon Web Services (AWS) - used to host and secure the project.</li>
+            <li>Ubuntu Linux - used as the operating system for the server.</li>
+            <li>Apache Web Server - used to serve the HTML content.</li>
+            <li>HTML - used to create the structure and content of the web page.</li>
+            <li>CSS - used to style the web page.</li>
+            <li>JavaScript - used to add interactivity to the web page.</li>
+        </ul>
+    </div>
+    <div id="steps" class="content">
+        <h3>Steps Taken</h3>
+        <ol>
+            <li>Provisioned an EC2 instance on AWS - set up the virtual server.</li>
+            <li>Installed Ubuntu Linux on the instance - configured the operating system.</li>
+            <li>Installed Apache Web Server - set up the web server software.</li>
+            <li>Created and deployed an HTML page - developed and uploaded the web content.</li>
+            <li>Configured security groups to allow HTTP traffic - ensured the server is accessible over the internet.</li>
+        </ol>
+    </div>
+    <div id="applications" class="content">
+        <h3>Possible Applications</h3>
+        <p>This project demonstrates the basic steps to set up a web server and deploy a web page. It can be used as a foundation for:</p>
+        <ul>
+            <li>Hosting personal or business websites - creating an online presence.</li>
+            <li>Deploying web applications - running interactive web-based software.</li>
+            <li>Learning and experimenting with web technologies - gaining practical experience.</li>
+        </ul>
+    </div>
+    <div id="references" class="content">
+        <h3>References</h3>
+        <p>Here are some of the references used:</p>
+        <ul>
+            <li>Amazon Web Services. (n.d.). Retrieved from https://aws.amazon.com/</li>
+            <li>Ubuntu. (n.d.). Retrieved from https://ubuntu.com/</li>
+            <li>Apache HTTP Server Project. (n.d.). Retrieved from https://httpd.apache.org/</li>
+        </ul>
+    </div>
+    <h3>MY FULL BIO</h3>
+    <p>I am Franc, a Tech Enthusiast. With well over 7 years in Computer Hardware Engineering. I have worked as an IT professional in the Power industry, Financial/Banking Industry, in the oil and gas in>
+    <p>Learning has been my habit from childhood, and this cuts across different domains of interest such as Cultures, Religion, Nature, Art, Archeology, and Science. As much as I have faith in things I >
+    <p>The future is bright, and soon most services will be moved to the cloud, this is why I am learning as much as I can to be able to handle future cloud services requests in a good capacity. A good p>
+    <p>In the end, I hope to become an unknown philanthropist who gives back to society through free consulting, assistance programs, scholarship programs, and mentoring programs. This I believe, is very>
+    <marquee behavior="scroll" direction="left">Motto: Your journey to the cloud starts in AltSchool; Let's Optimize, innovate, and thrive in the cloud</marquee>
+</body>
+</html>
