@@ -126,4 +126,7 @@ Use tools like SSL Checker to verify your SSL setup.
 ## Conclusion
 In this project, you will successfully learn how to set up and configure a basic web server using AWS EC2, Apache, and Let's Encrypt. By following these steps, you’ve provisioned a Linux-based instance, deployed a custom HTML landing page, linked it to a domain name, and secured it with HTTPS. This setup ensures your web server is both functional and secure, with traffic encrypted for privacy and safety. These skills are fundamental for hosting modern websites and applications, and they serve as a foundation for building more advanced cloud-based solutions. Whether you're a beginner or an aspiring cloud engineer, this project demonstrates how simple yet powerful tools can help you create secure and accessible web services. Happy hosting!
 
+## Slides Link:
+https://docs.google.com/presentation/d/1YYM1rnCDskqIJFoPUOkKls9xQjd5Uh1H/edit#slide=id.p1
+
 
