@@ -41,67 +41,63 @@ For PuTTY, convert the .pem key file to .ppk using PuTTYgen.
 Step 2: Install and Configure Apache
 Update the System: Run the following command to update and upgrade the instance:
 
-bash
-Copy code
+
+
 sudo apt update && sudo apt upgrade -y
 Install Apache: Apache is a widely used open-source web server. Install it by running:
 
-bash
-Copy code
+
+
 sudo apt install apache2 -y
 Start and Enable Apache: Ensure the Apache web server is running and set to start on boot:
 
-bash
-Copy code
+
+
 sudo systemctl start apache2
 sudo systemctl enable apache2
 Verify Apache Installation:
 
-Open a browser and navigate to http://<Public-IP> (replace <Public-IP> with your instance's public IP address).
+Open a browser and navigate to http://13.52.221.0 (replace 13.52.221.0 with your instance's public IP address).
 You should see the Apache default page indicating the server is running.
 Step 3: Deploy the HTML Landing Page
 Navigate to the Web Directory: The default location for web files in Apache is /var/www/html. Change to this directory:
 
-bash
-Copy code
+
+
 cd /var/www/html
 Remove the Default Page: Delete the default index.html file:
 
-bash
-Copy code
+
+
 sudo rm index.html
 Create Your Custom HTML Page: Use a text editor like Nano to create a new index.html file:
 
-bash
-Copy code
+
 sudo nano index.html
 Add the following content (replace with your details):
 html
-Copy code
+
 <!DOCTYPE html>
 <html>
 <head>
     <title>Welcome to My Project</title>
 </head>
 <body>
-    <h1>Welcome to [Your Name]'s Landing Page</h1>
+    <h1>Welcome to Francis Etang's Landing Page</h1>
     <p>This is a simple web server deployed on AWS.</p>
 </body>
 </html>
 Save the file (CTRL+O, then Enter) and exit (CTRL+X).
 Test Your Custom Page:
 
-Visit http://<Public-IP> in your browser to view your custom HTML content.
+Visit http://13.52.221.0 in your browser to view your custom HTML content.
 Step 4: Configure HTTPS with Let's Encrypt
 Install Certbot: Certbot is a tool that automates the process of obtaining and renewing SSL certificates. Install it with:
 
-bash
-Copy code
+
 sudo apt install certbot python3-certbot-apache -y
 Run Certbot to Obtain an SSL Certificate: Use Certbot to automatically configure SSL for your domain:
 
-bash
-Copy code
 sudo certbot --apache
 Enter your domain name(s) when prompted (e.g., francisetang.mooo.com and www.francisetang.mooo.com).
 Certbot will validate your domain, install the SSL certificate, and configure Apache for HTTPS.
@@ -114,8 +110,8 @@ Ensure a padlock icon is visible, confirming the connection is secure.
 Step 5: Secure the Server
 Enable UFW Firewall: Use UFW to allow only necessary traffic:
 
-bash
-Copy code
+
+
 sudo ufw allow 'Apache Full'
 sudo ufw enable
 Check AWS Security Group Rules:
@@ -125,42 +121,44 @@ Project Deliverables
 Key Information
 Public IP Address:
 
-Example: http://<Public-IP>.
+Example: http://13.52.221.0.
 Domain Name:
 
 Example: https://francisetang.mooo.com.
 Screenshots
 Include the following:
 
-Screenshot of the website on http://<Public-IP>.
+
+Screenshot of the website on http://13.52.221.0.
+
 Screenshot of the website on https://francisetang.mooo.com.
 Scripts and Commands Used
 Here is a summary of all the commands used in the project:
 
 System Updates
-bash
-Copy code
+
+
 sudo apt update && sudo apt upgrade -y
 Install Apache
-bash
-Copy code
+
+
 sudo apt install apache2 -y
 sudo systemctl start apache2
 sudo systemctl enable apache2
 Deploy HTML Page
-bash
-Copy code
+
+
 cd /var/www/html
 sudo rm index.html
 sudo nano index.html
 Configure HTTPS
-bash
-Copy code
+
+
 sudo apt install certbot python3-certbot-apache -y
 sudo certbot --apache
 Enable Firewall
-bash
-Copy code
+
+
 sudo ufw allow 'Apache Full'
 sudo ufw enable
 Expected Results
